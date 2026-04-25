@@ -1,0 +1,25 @@
+name: OWASP Dependency Check
+
+on:
+  workflow_call:
+
+
+jobs:    
+    dependency_check:
+        runs-on: ubuntu-latest
+        steps:
+
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: owasp scan 
+              uses: dependency-check/Dependency-Check_Action@main
+              with:
+                project: 'medicare-backend'
+                path: './backend'
+                format: 'HTML'
+
+
+
+
+        

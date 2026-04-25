@@ -28,3 +28,4 @@ jobs:
   call-trivy:
     uses: ./.github/workflows/trivy.yml
     needs: call-build
+    secrets: inherit

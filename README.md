@@ -1,7 +1,7 @@
 # 🏥 MediCare — Healthcare Appointment System
 
 > A full-stack DevSecOps project built as part of the #90DaysOfDevOps challenge.
-> Built by **Ketul Shah** | Mentored by **TrainWithShubham**
+> Built by **Ketul Patel** | Mentored by **TrainWithShubham**
 
 ---
 
@@ -207,5 +207,5 @@ Push to GitHub
 
 ## 👨‍💻 Author
 
-**Ketul Shah** — DevOps Learner | #90DaysOfDevOps  
+**Ketul Patel** — DevOps Learner | #90DaysOfDevOps  
 🔗 [LinkedIn](https://linkedin.com) | Mentored by [TrainWithShubham](https://trainwithshubham.com)

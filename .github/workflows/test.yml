@@ -1,0 +1,27 @@
+name: test
+
+on: 
+    workflow_call:
+
+jobs:
+    test-code:
+        runs-on: ubuntu-latest
+
+        steps:
+
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: setup node js
+              uses: actions/setup-node@v4
+              with: 
+                node-version: '18' 
+            - name: install dependemcies
+              run: npm install 
+              working-directory: ./backend 
+
+            - name: npm test
+              run: npm test  
+              working-directory: ./backend
+            
+

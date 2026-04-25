@@ -2,7 +2,6 @@ name: Hadolint Dockerfile Lint
 
 on:
   workflow_call:
-
 jobs:
     scan-dockerfile:
         runs-on: ubuntu-latest

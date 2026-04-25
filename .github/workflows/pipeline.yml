@@ -1,0 +1,28 @@
+name: MediCare DevSecOps Pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-test:
+    uses: ./.github/workflows/test.yml
+
+  call-gitleaks:
+    uses: ./.github/workflows/gitleaks.yml
+    needs: call-test
+
+  call-hadolint:
+    uses: ./.github/workflows/hadolint.yml
+    needs: call-test
+
+  call-owasp:
+    uses: ./.github/workflows/owasp.yml
+    needs: call-test
+
+  call-build:
+    uses: ./.github/workflows/build.yml
+    needs: [call-gitleaks, call-hadolint, call-owasp]
+
+  call-trivy:
+    uses: ./.github/workflows/trivy.yml
+    needs: call-build

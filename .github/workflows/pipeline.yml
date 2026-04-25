@@ -29,3 +29,8 @@ jobs:
     uses: ./.github/workflows/trivy.yml
     needs: call-build
     secrets: inherit
+
+  call-deploy:
+    uses: ./.github/workflows/deploy.yml
+    needs: call-trivy
+    secrets: inherit  

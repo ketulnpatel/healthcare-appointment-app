@@ -22,6 +22,8 @@ jobs:
   call-build:
     uses: ./.github/workflows/build.yml
     needs: [call-gitleaks, call-hadolint, call-owasp]
+    secrets: inherit
+
 
   call-trivy:
     uses: ./.github/workflows/trivy.yml

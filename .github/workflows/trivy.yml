@@ -1,0 +1,20 @@
+name: trivy
+
+on:
+    workflow_call:
+
+jobs:
+    trivy:
+        runs-on: ubuntu-latest
+        
+        steps:
+
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: trivy scan  
+              uses: aquasecurity/trivy-action@master
+              with:
+                image-ref: '${{ vars.DOCKERHUB_USERNAME }}/medicare-backend:latest'
+                format: 'table'
+                severity: 'CRITICAL,HIGH'

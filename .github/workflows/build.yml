@@ -14,7 +14,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and Push Docker Image
@@ -23,5 +23,5 @@ jobs:
           context: ./backend
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_USERNAME }}/medicare-backend:latest
-            ${{ vars.DOCKERHUB_USERNAME }}/medicare-backend:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/medicare-backend:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/medicare-backend:${{ github.sha }}

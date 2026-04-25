@@ -1,0 +1,25 @@
+name: Hadolint Dockerfile Lint
+
+on:
+  workflow_call:
+
+jobs:
+    scan-dockerfile:
+        runs-on: ubuntu-latest
+
+        steps:
+
+            - name: checkout code
+              uses: actions/checkout@v4
+
+
+            - name: Hadolint scan backend
+              uses: hadolint/hadolint-action@v3.1.0
+              with:
+                dockerfile: ./backend/dockerfile
+
+            - name: Hadolint scan frontend
+              uses: hadolint/hadolint-action@v3.1.0
+              with:
+                dockerfile: ./frontend/dockerfile    
+            
